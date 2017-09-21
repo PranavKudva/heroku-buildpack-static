@@ -93,6 +93,12 @@ http {
     return 404;
   }
 
+  location /return503 {
+    return 503;
+  }
+
+
+
   # fallback proxy named match
   <% proxies.each do |location, hash| %>
     set $<%= hash['name'] %> <%= hash['host'] %>;
